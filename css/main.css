@@ -227,6 +227,7 @@ body {
   font-family: var(--font-family-base);
   color: var(--color-text);
   line-height: 1.3;
+  height: 100%;
 }
 
 .wrapper {
@@ -632,7 +633,7 @@ a[class] {
   }
 }
 .icon-arrow::before {
-  background-image: url("../../icons/arrow.svg");
+  background-image: url("../icons/arrow.svg");
 }
 
 .slider__wrapper {
@@ -948,8 +949,8 @@ a[class] {
   position: relative;
   padding-top: 120px;
   padding-bottom: clamp(3.75rem, -0.1782024793rem + 16.1157024793vw, 15.9375rem);
-  background-image: url("./../../img/explore-bg.jpg"), -webkit-gradient(linear, left top, left bottom, from(#0d606f), color-stop(25.1%, rgba(13, 96, 111, 0)));
-  background-image: url("./../../img/explore-bg.jpg"), linear-gradient(180deg, #0d606f 0%, rgba(13, 96, 111, 0) 25.1%);
+  background-image: url("../img/explore-bg.jpg"), -webkit-gradient(linear, left top, left bottom, from(#0d606f), color-stop(25.1%, rgba(13, 96, 111, 0)));
+  background-image: url("../img/explore-bg.jpg"), linear-gradient(180deg, #0d606f 0%, rgba(13, 96, 111, 0) 25.1%);
   background-size: cover;
   color: var(--color-white);
 }
