@@ -1,0 +1,33 @@
+@use "../helpers" as *;
+
+.stories {
+  background-color: hsla(0, 0%, 100%, 0.8);
+  padding-bottom: rem(30);
+  margin-bottom: rem(70);
+  // .stories__container
+  &__container {
+  }
+  // .stories__body
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: rem(40);
+  }
+  // .stories__title
+  &__title {
+    margin-bottom: rem(40);
+  }
+  // .stories__articles
+  &__articles {
+  }
+  // .stories__article
+  &__article {
+    &:not(:last-child) {
+      margin-bottom: rem(30);
+    }
+  }
+  // .stories__link
+  &__link {
+    align-self: center;
+  }
+}

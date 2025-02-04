@@ -1,0 +1,43 @@
+@use "../helpers" as *;
+
+.search-form {
+  display: flex;
+  justify-content: space-between;
+  padding: fluid(18, 9);
+  width: 80%;
+  background-color: var(--color-bg-form);
+  border-radius: 16px;
+  @include mobile {
+    width: 100%;
+  }
+  // .search-form__input
+  &__input {
+    @include fluid-text(24, 14);
+
+    padding-left: fluid(23, 10);
+    margin-right: 10px;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    font-style: italic;
+    color: var(--color-blue);
+    letter-spacing: -1px;
+    &::placeholder {
+      color: #f2785c;
+      @include transition(0.5s, 0s);
+    }
+    &:focus::placeholder {
+      font-size: rem(14);
+      transform: translate3d(0, -14px, 0);
+    }
+  }
+  // .search-form__btn
+  &__btn {
+    padding: rem(14) rem(32);
+    @include mobile {
+      min-height: rem(32);
+      padding: rem(7.5) rem(12);
+      font-size: rem(14);
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@use "../helpers" as *;
+
+.destinations {
+  padding-block: fluid(80, 40);
+  // .destinations__body
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: rem(40);
+  }
+  // .destinations__title
+  &__title {
+  }
+  // .destinations__slider
+  &__slider {
+  }
+  // .destinations__link
+  &__link {
+    align-self: center;
+  }
+}

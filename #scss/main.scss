@@ -1,0 +1,24 @@
+// Base
+@use "normalize";
+@use "fonts";
+@use "vars";
+@use "utils";
+@use "globals";
+
+// UI blocks
+@use "blocks/buttons";
+@use "blocks/burger-button";
+@use "blocks/logo";
+@use "blocks/search-form";
+@use "blocks/cell-steps";
+@use "blocks/icon";
+@use "blocks/slider";
+@use "blocks/article-stories";
+
+// Page blocks
+@use "blocks/header";
+@use "blocks/footer";
+@use "blocks/explore";
+@use "blocks/steps";
+@use "blocks/destinations";
+@use "blocks/stories";

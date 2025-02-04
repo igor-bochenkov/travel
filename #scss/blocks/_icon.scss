@@ -1,0 +1,29 @@
+@use "../helpers" as *;
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  margin-right: rem(10);
+
+  &::before {
+    --size: #{rem(40)};
+
+    @include square(var(--size));
+
+    content: "";
+    flex-shrink: 0;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @include mobile {
+      --size: #{rem(20)};
+    }
+  }
+
+  &-arrow {
+    &::before {
+      background-image: url("../../icons/arrow.svg");
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@use "../helpers" as *;
+
+.explore {
+  position: relative;
+  padding-top: 120px;
+  padding-bottom: fluid(255, 60);
+  background-image: url("./../../img/explore-bg.jpg"), linear-gradient(180deg, #0d606f 0%, rgba(13, 96, 111, 0) 25.1%);
+  background-size: cover;
+  color: var(--color-white);
+  // .explore__container
+  &__container {
+  }
+  // .explore__body
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: fluid(46, 20);
+  }
+  // .explore__title
+  &__title {
+    max-width: rem(892);
+  }
+  // .explore__description
+  &__description {
+  }
+  // .explore__search
+  &__search {
+  }
+}

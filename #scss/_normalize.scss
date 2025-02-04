@@ -1,0 +1,133 @@
+//* Нормализация блочной модели
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  //Убирает скачок интерфейса по горизонтали при появлении / исчезновении скроллбара
+  scrollbar-gutter: stable;
+}
+
+// Плавный скролл
+html,
+:has(:target) {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100%;
+  //Унифицированный интерлиньяж
+  line-height: 1.5;
+}
+
+//* Изображения и видео
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+//* Смена курсора при наведении
+button,
+label {
+  cursor: pointer;
+}
+
+//* Удаление отступов
+//Удаление внутренних отступов слева тегам списков, имеющих атрибут class
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+//Удаление внешних отступов body, blockquote и figure, имеющих атрибут class
+body,
+:where(blockquote, figure):where([class]) {
+  margin: 0;
+}
+
+//Удаление внешних отступов по вертикали данным тегам, имеющих атрибут class
+:where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl):where([class]) {
+  margin-block: 0;
+}
+
+//Удаление внешнего отступа у тэга dd
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+//Удаление внешних и внутренних отступов у тэга fieldset
+:where(fieldset[class]) {
+  margin-left: 0;
+  padding: 0;
+  border: none;
+}
+
+//Удаление стандартного маркера маркированному списку, имеющего атрибут class
+:where(ul[class]) {
+  list-style: none;
+}
+
+// Обнуляем вертикальные внешние отступы параграфа, объявляем локальную переменную для внешнего отступа вниз, чтобы избежать взаимодействие с более сложным селектором
+p {
+  --paragraphMarginBottom: 24px;
+  margin-block: 0;
+}
+
+//* Шрифт
+// Наследование свойств шрифта для полей ввода
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+:where(address[class]) {
+  font-style: normal;
+}
+
+//* SVG-элементы
+//Приводим к единому цвету (за исключением имеющих атрибут stroke = 'none')
+// :where([stroke]:not([stroke="none"], [stroke^="url"])) {
+//   stroke: currentColor;
+// }
+
+[fill] {
+  fill: currentColor;
+}
+[stroke] {
+  stroke: currentColor;
+}
+
+//Fix: баг задержки смены цвета при взаимодействии
+svg * {
+  transition-property: fill, stroke;
+}
+
+//* Прочее
+//Удаление всех анимаций и переходов для людей, которые предпочитают их не использовать
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+//Приведение рамок таблиц в классический 'collapse' вид
+:where(table) {
+  border-collapse: collapse;
+  border-color: currentColor;
+}
+
+//Нормализация высоты элемента ссылки при его инспектировании в DevTools
+a:where([class]) {
+  display: inline-flex;
+}

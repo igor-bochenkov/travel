@@ -1,0 +1,22 @@
+@use "../helpers" as *;
+
+.cell-steps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(30);
+
+  @media (max-width: ($md4+px)) {
+    gap: rem(20);
+  }
+  // .cell-steps__icon
+  &__icon {
+    @include mobile {
+      width: 70px;
+    }
+  }
+  // .cell-steps__description
+  &__description {
+    text-align: center;
+  }
+}

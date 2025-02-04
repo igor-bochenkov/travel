@@ -1,0 +1,34 @@
+@use "../helpers" as *;
+
+.steps {
+  padding-block: fluid(80, 20);
+  // .steps__container
+  &__container {
+  }
+  // .steps__body
+  &__body {
+  }
+  // .steps__title
+  &__title {
+    margin-bottom: fluid(40, 20);
+  }
+  // .steps__cards
+  &__cards {
+    display: flex;
+    justify-content: space-between;
+    gap: rem(15);
+
+    @media (max-width: ($md4+px)) {
+      flex-direction: column;
+    }
+  }
+  // .steps__cell
+  &__cell {
+    flex: 0 1 33.333%;
+    @media (max-width: ($md4+px)) {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@use "helpers" as *;
+
+:root {
+  --color-white: #ffffff;
+  --color-text: var(--color-blue);
+  --color-background: #f8f8f8;
+  --color-orange: #f2785c;
+  --color-blue: #0d606f;
+  --color-bg-form: #ffffffb3;
+
+  --container-width: #{rem(1200)};
+  --container-padding-x: #{rem(15)};
+
+  --font-family-base: "Aleo", serif;
+  --font-family-ui: "RedHatText", sans-serif;
+  --font-family-logo: "Magra", sans-serif;
+
+  --transition-duration: 0.2s;
+}

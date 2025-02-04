@@ -1,0 +1,68 @@
+@use "../helpers" as *;
+
+.slider {
+  // position: relative;
+  // .slider__wrapper
+  &__wrapper {
+    overflow: hidden;
+    width: 100%;
+  }
+  // .slider__inner
+  &__inner {
+    display: flex;
+    justify-content: center;
+    gap: rem(60);
+    margin-bottom: rem(24);
+  }
+  // .slider__slide
+  &__slide {
+    position: relative;
+    flex: 0 0 rem(600);
+    overflow: hidden;
+    border-radius: rem(16);
+    // @include laptop {
+    //   flex: 0 0 rem(400);
+    // }
+  }
+  // .slider__image
+  &__image {
+  }
+  // .slider__slide-description
+  &__slide-description {
+    @include fluid-text(32, 20);
+
+    position: absolute;
+    left: 15px;
+    bottom: 35px;
+    font-family: var(--font-family-ui);
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--color-white);
+  }
+  // .slider__pagination
+  &__pagination {
+    display: flex;
+    justify-content: center;
+  }
+}
+.dot {
+  @include square(rem(20));
+
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: hsla(11, 85%, 65%, 0.5);
+  margin: 5px;
+  &.is-active {
+    background-color: var(--color-orange);
+    user-select: none;
+    cursor: auto;
+  }
+  &:not(.is-active) {
+    @include hover {
+      background-color: var(--color-orange);
+    }
+    &:active {
+      background-color: var(--color-blue);
+    }
+  }
+}
